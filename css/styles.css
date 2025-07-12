@@ -1,0 +1,160 @@
+/* css/styles.css */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+header, footer {
+  background: #00796b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+header h1 { margin-bottom: 0.2rem; }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+nav ul.open { max-height: 500px; }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+.card {
+  background: white;
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-grid {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.profile-pic {
+  max-width: 100%;
+  height: auto;
+}
+
+.quick-facts {
+  list-style: none;
+  margin-top: 1rem;
+}
+.quick-facts li { margin-bottom: 0.5rem; }
+#proverb {
+  font-style: italic;
+  font-size: 1.1rem;
+  border-left: 5px solid #00796b;
+  padding-left: 1rem;
+  color: #444;
+}
+blockquote {
+  background: #e0f2f1;
+  border-left: 4px solid #004d40;
+  padding: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+blockquote small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #555;
+}
+footer .socials {
+  margin-top: 0.5rem;
+}
+footer .socials a {
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+}
+footer .socials a:hover { opacity: 0.8; }
+.hamburger, #themeToggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  cursor: pointer;
+}
+.hamburger { left: 1rem; }
+#themeToggle { right: 1rem; }
+@media (min-width: 769px) {
+  nav ul {
+    max-height: none;
+    flex-direction: row;
+  }
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+body.dark-mode .card { background: #1e1e1e; }
+body.dark-mode header, body.dark-mode footer { background: #333;  
+}
+/* More complete dark mode styles */
+body.dark-mode a {
+  color: #90caf9;
+}
+
+body.dark-mode nav a {
+  color: #eee;
+}
+
+body.dark-mode nav a:hover {
+  color: #90caf9;
+  text-decoration: underline;
+}
+
+body.dark-mode .card {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark-mode #proverb {
+  border-left-color: #90caf9;
+  color: #ccc;
+}
+
+body.dark-mode blockquote {
+  background: #263238;
+  border-left: 4px solid #90caf9;
+  color: #eee;
+}
+
+body.dark-mode blockquote small {
+  color: #ccc;
+}
+
+body.dark-mode footer .socials a {
+  color: #90caf9;
+}
+
+
+
