@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     proverbEl.textContent = proverbs[index];
   }
 
-  // Scroll reveal
+  // Scroll reveal for cards
   const revealElements = document.querySelectorAll(".card");
   const revealOnScroll = () => {
     revealElements.forEach(el => {
@@ -54,4 +54,33 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // Auto-close nav menu on link click (mobile only)
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 769) {
+        navList.classList.remove("open");
+      }
+    });
+  });
+
+  // Remove .open class when resizing to large screen
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 769) {
+      navList.classList.remove("open");
+    }
+  });
+
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
+

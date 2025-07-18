@@ -6,6 +6,25 @@ body {
   color: #333;
   line-height: 1.6;
 }
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background: #00796b;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+#scrollTopBtn:hover {
+  opacity: 0.85;
+}
+
 
 header, footer {
   background: #00796b;
