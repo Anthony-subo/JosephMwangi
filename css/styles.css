@@ -79,6 +79,20 @@ nav a:hover {
 .quick-facts li {
   margin-bottom: 0.5rem;
 }
+.cv-button {
+  display: inline-block;
+  background-color: #00796b;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  }
+
+.cv-button:hover {
+  background-color: #00796b;
+  }
 
 #proverb {
   font-style: italic;
@@ -146,6 +160,11 @@ footer .socials a:hover {
     align-items: center;
     text-align: center;
   }
+  /* Show hamburger only on small screens */
+  .hamburger {
+    display: none;
+  }
+
   footer .socials {
   margin-top: 0.5rem;
 }
