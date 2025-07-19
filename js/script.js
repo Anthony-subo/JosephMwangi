@@ -82,5 +82,24 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-});
 
+  // Swipe-to-reveal developer footer info
+  const hiddenBox = document.getElementById("hiddenDetails");
+  const swipeZone = document.querySelector(".right-box");
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (swipeZone && hiddenBox) {
+    swipeZone.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    swipeZone.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const threshold = 50;
+      if (Math.abs(touchEndX - touchStartX) > threshold) {
+        hiddenBox.classList.add("show");
+      }
+    });
+  }
+});
